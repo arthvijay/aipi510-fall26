@@ -1,0 +1,17 @@
+metric,value,unit,definition
+raw_stackoverflow_months,104.0,months,Rows in the raw monthly Stack Overflow series
+stackoverflow_first_month_questions,160440.0,questions,January 2018
+stackoverflow_last_month_questions,1130.0,questions,August 2026
+stackoverflow_first_to_last_change_pct,-99.3,%,Change from January 2018 to August 2026
+largest_pre_chatgpt_annual_decline_pct,-17.29,%,Largest year-over-year decline through 2022
+2023_annual_change_pct,-41.0,%,2023 versus 2022
+2024_annual_change_pct,-49.42,%,2024 versus 2023
+2025_annual_change_pct,-72.45,%,2025 versus 2024
+pre_chatgpt_modeled_annual_change_pct,-7.71,%,"Annualized modeled trend before December 2022, controlling for month and early-pandemic months"
+daily_visitors_uses_AI_2023,40.73,%,Survey respondents in 2023 reporting daily or almost-daily visits
+daily_visitors_does_not_2023,35.78,%,Survey respondents in 2023 reporting daily or almost-daily visits
+daily_visitors_uses_AI_2024,37.41,%,Survey respondents in 2024 reporting daily or almost-daily visits
+daily_visitors_does_not_2024,36.25,%,Survey respondents in 2024 reporting daily or almost-daily visits
+daily_visitors_uses_AI_2025,23.19,%,Survey respondents in 2025 reporting daily or almost-daily visits
+daily_visitors_does_not_2025,31.34,%,Survey respondents in 2025 reporting daily or almost-daily visits
+survey_cleaned_rows,203812.0,respondents,Rows across the three cleaned survey extracts

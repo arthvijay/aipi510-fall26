@@ -5,3 +5,16 @@
 
 .DS_Store
 week2/source-data-venv/.venv/
+
+# Local Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Project 1 secrets and generated survey files
+project1/.env
+project1/.env.*
+!project1/.env.example
+project1/data/raw/survey/survey_*_results.csv

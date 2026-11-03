@@ -30,3 +30,9 @@ Here are the branches you will be making PRs into:
 * week2/
 * week4/
 * week6/
+
+## Project 1
+
+The separate group analysis project is kept in [`project1/`](project1/). Its
+pipeline and reproduction instructions are documented in
+[`project1/README.md`](project1/README.md).

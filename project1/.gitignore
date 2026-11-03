@@ -1,0 +1,42 @@
+# Reference exploration projects (kept locally, not part of the final deliverable)
+t_1_congestion_pricing/
+t_2_heat_crime/
+t_3_chatgpt_stackoverflow/
+
+# Keep data/ tracked (it is part of the deliverable). Order matters: these
+# re-include rules must come BEFORE the survey exception below, because here
+# the last matching pattern wins.
+!data/
+!data/**
+
+# Survey raw files are 130-150 MB each, over GitHub's 100 MB per-file limit;
+# regenerate with `python src/download.py` (see README).
+data/raw/survey/survey_*_results.csv
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+*.log
