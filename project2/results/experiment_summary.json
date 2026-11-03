@@ -1,0 +1,59 @@
+{
+  "study": {
+    "seed": 42,
+    "n_rows": 600,
+    "n_folds": 50,
+    "k": 5
+  },
+  "primary": {
+    "raw_accuracy_mean": 0.553,
+    "standardized_accuracy_mean": 0.9536666666666668,
+    "mean_gain": 0.4006666666666666,
+    "mean_gain_percentage_points": 40.06666666666666,
+    "paired_t": {
+      "t": 68.31174879477108,
+      "df": 49,
+      "p_value": 2.918707613110484e-50,
+      "ci_95": [
+        0.38917074275135355,
+        0.4121625905819797
+      ]
+    },
+    "nadeau_bengio": {
+      "t": 18.59210310937476,
+      "p_value": 3.722898507174639e-77,
+      "ci_95": [
+        0.3584279450951039,
+        0.44290538823822934
+      ]
+    },
+    "wilcoxon": {
+      "statistic": 0.0,
+      "p_value": 7.439848234956391e-10
+    },
+    "effect_sizes": {
+      "paired_cohen_dz": 9.660740161498918,
+      "pooled_cohen_d": 13.880444751380338,
+      "hedges_g": 13.773945175282787
+    },
+    "assumptions": {
+      "shapiro_w": 0.9867263953233796,
+      "shapiro_p": 0.842529193309207,
+      "ks_d": 0.07383396121687114,
+      "ks_p": 0.9293508618958328,
+      "skewness": -0.07413700914036327,
+      "kurtosis": -0.5726978218528251
+    },
+    "friedman": {
+      "chi_square": 107.17990654205606,
+      "p_value": 4.437849091332878e-23
+    }
+  },
+  "holdout_replication": {
+    "n_splits": 30,
+    "raw_accuracy_mean": 0.5441666666666667,
+    "standardized_accuracy_mean": 0.9533333333333334,
+    "mean_gain": 0.40916666666666673,
+    "cohen_dz": 9.663324741763523
+  }
+}
