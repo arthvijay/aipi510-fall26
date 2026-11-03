@@ -58,3 +58,11 @@ change and a statistical-analysis/visualization change. The pull-request
 template records checks for deterministic simulation, leakage prevention, row
 counts, and statistical validation. A solo researcher can use the same
 branch-and-self-review workflow to preserve reproducible history.
+
+## Data-pipeline PR review record
+
+- [x] Canonical raw and processed CSVs are stored under `data/`.
+- [x] Raw input has 648 rows; the cleaned cohort has 600 rows and 12 columns.
+- [x] Cleaning stages reproduce the supplied cohort deterministically.
+- [x] Missingness and domain checks are applied after exact deduplication.
+- [x] `python3 run_all.py` validates the required data outputs.
