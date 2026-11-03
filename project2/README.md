@@ -66,3 +66,13 @@ branch-and-self-review workflow to preserve reproducible history.
 - [x] Cleaning stages reproduce the supplied cohort deterministically.
 - [x] Missingness and domain checks are applied after exact deduplication.
 - [x] `python3 run_all.py` validates the required data outputs.
+
+## Statistical-analysis PR review record
+
+- [x] Repeated stratified CV uses 10 repeats and 5 folds with seed 42.
+- [x] Every scaler is fitted within each training fold only.
+- [x] Paired t, Nadeau-Bengio, Wilcoxon, normality, effect-size, and Friedman
+  diagnostics are exported in `results/experiment_summary.json`.
+- [x] Holm-Bonferroni and Bonferroni corrections cover all requested k values
+  and both distance metrics.
+- [x] Six 200-DPI figures and all result tables are regenerated successfully.
