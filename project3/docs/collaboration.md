@@ -1,7 +1,8 @@
 # Collaboration
 
-Arth Vijaywargia is the sole contributor. Work is performed on a feature
-branch, reviewed through an authentic GitHub pull request, and merged only
-when repository checks and policies permit. No second contributor, approval, or
-instructor exception is claimed. The actual PR URL is recorded here after it
-is created.
+Arth Vijaywargia is the sole contributor. Work was performed on the
+`feat/ridecast-project3` branch and merged through authentic GitHub pull requests:
+[PR #5](https://github.com/arthvijay/aipi510-fall26/pull/5) added the complete
+RideCast deployment, and
+[PR #6](https://github.com/arthvijay/aipi510-fall26/pull/6) documented the
+public Streamlit URL. No second contributor or approval is claimed.

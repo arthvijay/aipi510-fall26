@@ -1,6 +1,7 @@
 # Demo
 
-Open the deployed Streamlit app, make one prediction, then use Compare
+Open the [deployed Streamlit app](https://aipi510-fall26-nybzcnzfqfjaiqeaikzedm.streamlit.app/),
+make one prediction, then use Compare
 scenarios to request two 24-hour profiles. Open `/docs` for interactive API
 requests and run `python scripts/smoke_test.py --base-url <api-origin>`.
 The local MLflow comparison is opened with `mlflow ui --backend-store-uri
