@@ -12,7 +12,8 @@ Training and MLflow remain local. Cleaned data and the immutable model release
 are stored in private regional GCS. The deployed public API is at
 `https://ridecast-api-oidv2f4u5a-uc.a.run.app`; public access is configured
 with Cloud Run `--no-invoker-iam-check`. The UI is HTTP-only and intended for
-Streamlit Community Cloud.
+Streamlit Community Cloud. The public UI is
+<https://aipi510-fall26-nybzcnzfqfjaiqeaikzedm.streamlit.app/>.
 
 ## Quick start
 
