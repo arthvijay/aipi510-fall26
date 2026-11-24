@@ -32,6 +32,10 @@ upload and GCS-ingestion runs. Open MLflow with:
 mlflow ui --backend-store-uri sqlite:///workdir/tracking/mlflow.db --default-artifact-root workdir/tracking/artifacts
 ```
 
+The verified local run selected `rf_standard` release
+`rf_standard-7312d6a8de51`. Its held-out test MAE is 88.2332 rentals/hour,
+RMSE 128.4624, and R² 0.5939; the mean baseline test MAE is 156.5652.
+
 ## API and UI
 
 ```bash
