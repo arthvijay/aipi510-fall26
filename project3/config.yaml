@@ -1,0 +1,69 @@
+project:
+  name: ridecast
+  random_seed: 42
+data:
+  source_page: "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset"
+  source_zip: "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip"
+  source_member: "hour.csv"
+  schema_version: "1"
+  target: cnt
+  ingestion_source: gcs
+  bucket_env: RIDECAST_GCS_BUCKET
+  cloud_manifest_uri_env: RIDECAST_DATA_MANIFEST_URI
+  cleaned_prefix: data/clean
+  workdir: workdir
+split:
+  strategy: chronological
+  train_end_exclusive: "2012-07-01"
+  validation_end_exclusive: "2012-10-01"
+  test_end_exclusive: "2013-01-01"
+features:
+  categorical: [month, hour, weekday, is_holiday, is_workingday, weather_category]
+  numeric: [temperature_c, humidity_pct, wind_speed_kmh]
+  temperature_norm_min_c: -8.0
+  temperature_norm_max_c: 39.0
+  humidity_scale: 100.0
+  wind_speed_scale_kmh: 67.0
+model:
+  baseline_strategy: mean
+  candidates:
+    - {name: rf_small, n_estimators: 100, max_depth: 12, min_samples_leaf: 2}
+    - {name: rf_standard, n_estimators: 200, max_depth: 18, min_samples_leaf: 2}
+  n_jobs: 1
+evaluation:
+  primary_metric: mae
+  additional_metrics: [rmse, r2]
+  demand_quantiles: [0.33, 0.67]
+tracking:
+  experiment_name: ridecast-bike-demand
+  sqlite_path: workdir/tracking/mlflow.db
+  artifact_dir: workdir/tracking/artifacts
+  backup_prefix: tracking
+artifacts:
+  local_dir: workdir/models
+  cloud_prefix: models
+  model_source_env: RIDECAST_MODEL_SOURCE
+  model_dir_env: RIDECAST_MODEL_DIR
+  model_manifest_uri_env: RIDECAST_MODEL_MANIFEST_URI
+api:
+  host: 0.0.0.0
+  default_port: 8080
+frontend:
+  api_url_env: RIDECAST_API_URL
+  connect_timeout_seconds: 5
+  read_timeout_seconds: 60
+deployment:
+  project_id: ridecast-515702
+  expected_project_number: "121192188296"
+  project_id_env: RIDECAST_GCP_PROJECT
+  region: us-central1
+  service_name: ridecast-api
+  registry_repository: ridecast
+  minimum_instances: 0
+  maximum_instances: 1
+  cpu: 0.5
+  memory: 512Mi
+  concurrency: 1
+  execution_environment: gen1
+  billing: request-based
+  build_mode: local

@@ -1,0 +1,9 @@
+.git
+.env
+.streamlit/secrets.toml
+workdir
+data
+reports
+__pycache__
+.pytest_cache
+*.db

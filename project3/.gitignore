@@ -1,0 +1,13 @@
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.venv/
+.env
+.streamlit/secrets.toml
+workdir/
+mlruns/
+data/
+reports/
+frontend/.streamlit/
+*.pyc
