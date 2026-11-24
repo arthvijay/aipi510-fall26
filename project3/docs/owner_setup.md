@@ -3,6 +3,8 @@
 This repository is prepared for Streamlit Community Cloud at
 `project3/frontend/streamlit_app.py`, using Python 3.11 and
 `project3/frontend/requirements.txt`.
+The deployed public app URL is
+`https://aipi510-fall26-nybzcnzfqfjaiqeaikzedm.streamlit.app/`.
 If the authenticated browser is unavailable, sign in at
 <https://share.streamlit.io>, select this repository, the `main` branch, and
 that entry point, then deploy publicly. No secret is required because the
