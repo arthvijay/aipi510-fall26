@@ -8,7 +8,7 @@ from typing import Any
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 
-from .artifacts import load_release
+from .artifacts import load_gcs_release, load_release
 from .config import load_config
 from .features import make_features
 from .schemas import BatchRequest, BatchResponse, PredictionRequest, PredictionResponse
@@ -42,10 +42,16 @@ def _predict(request: PredictionRequest) -> PredictionResponse:
 async def lifespan(_: FastAPI):
     config = load_config(os.getenv("RIDECAST_CONFIG", "config.yaml"))
     source = os.getenv("RIDECAST_MODEL_SOURCE", "local")
-    release = os.getenv("RIDECAST_MODEL_DIR")
-    if source != "local" or not release:
-        raise RuntimeError("API requires RIDECAST_MODEL_SOURCE=local and RIDECAST_MODEL_DIR for local serving.")
-    model, metadata = load_release(release)
+    if source == "gcs":
+        manifest_uri = os.getenv("RIDECAST_MODEL_MANIFEST_URI")
+        if not manifest_uri:
+            raise RuntimeError("API with RIDECAST_MODEL_SOURCE=gcs requires RIDECAST_MODEL_MANIFEST_URI.")
+        model, metadata = load_gcs_release(manifest_uri)
+    else:
+        release = os.getenv("RIDECAST_MODEL_DIR")
+        if not release:
+            raise RuntimeError("API with RIDECAST_MODEL_SOURCE=local requires RIDECAST_MODEL_DIR.")
+        model, metadata = load_release(release)
     STATE.update(model=model, metadata=metadata, config=config)
     yield
     STATE.clear()

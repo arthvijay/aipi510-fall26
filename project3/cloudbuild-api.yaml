@@ -1,6 +1,7 @@
 steps:
   - name: gcr.io/cloud-builders/docker
     args: ["build", "--platform=linux/amd64", "--target=api", "-t", "${_IMAGE}", "."]
+dir: project3
 images: ["${_IMAGE}"]
 substitutions:
   _IMAGE: us-central1-docker.pkg.dev/ridecast-515702/ridecast/ridecast-api:fallback
