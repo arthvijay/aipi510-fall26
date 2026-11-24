@@ -7,11 +7,11 @@ station placement, unique riders, or causal effects.
 
 ## Status and architecture
 
-The complete local implementation is present. Public API, Streamlit URL,
-cloud-ingestion evidence, and model metrics remain pending until the current
-environment provides authenticated GCP/Docker access. Training and MLflow are
-local; cleaned data and the immutable model release are intended for a private
-regional GCS bucket; one slim API image is intended for Cloud Run; the UI is
+The implementation is deployed to Cloud Run and has real GCS ingestion evidence.
+Training and MLflow remain local. Cleaned data and the immutable model release
+are stored in private regional GCS. The deployed API is at
+`https://ridecast-api-oidv2f4u5a-uc.a.run.app`, subject to the project
+organization policy described in [deployment.md](docs/deployment.md). The UI is
 HTTP-only and intended for Streamlit Community Cloud.
 
 ## Quick start
