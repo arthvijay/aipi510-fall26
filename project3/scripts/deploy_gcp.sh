@@ -33,4 +33,5 @@ gcloud run deploy "$SERVICE" --project="$PROJECT" --region="$REGION" --image="$I
   --service-account="${RUNTIME_SA}@${PROJECT}.iam.gserviceaccount.com" \
   --platform=managed --allow-unauthenticated --cpu=0.5 --memory=512Mi \
   --concurrency=1 --min-instances=0 --max-instances=1 --execution-environment=gen1 \
-  --set-env-vars="RIDECAST_MODEL_SOURCE=gcs,RIDECAST_MODEL_MANIFEST_URI=${RIDECAST_MODEL_MANIFEST_URI}"
+  --set-env-vars="RIDECAST_MODEL_SOURCE=gcs,RIDECAST_MODEL_MANIFEST_URI=${RIDECAST_MODEL_MANIFEST_URI}" \
+  --no-invoker-iam-check

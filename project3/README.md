@@ -9,10 +9,10 @@ station placement, unique riders, or causal effects.
 
 The implementation is deployed to Cloud Run and has real GCS ingestion evidence.
 Training and MLflow remain local. Cleaned data and the immutable model release
-are stored in private regional GCS. The deployed API is at
-`https://ridecast-api-oidv2f4u5a-uc.a.run.app`, subject to the project
-organization policy described in [deployment.md](docs/deployment.md). The UI is
-HTTP-only and intended for Streamlit Community Cloud.
+are stored in private regional GCS. The deployed public API is at
+`https://ridecast-api-oidv2f4u5a-uc.a.run.app`; public access is configured
+with Cloud Run `--no-invoker-iam-check`. The UI is HTTP-only and intended for
+Streamlit Community Cloud.
 
 ## Quick start
 

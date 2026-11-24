@@ -22,12 +22,10 @@ The deployed revision is gen1, 0.5 vCPU, 512 MiB, concurrency 1, minimum 0,
 maximum 1, and uses the dedicated `ridecast-runtime` service account with
 `roles/storage.objectViewer` on the private bucket.
 
-The project effective `iam.allowedPolicyMemberDomains` policy restricts IAM
-members to organization domain `C00wrsdu1`, so `allUsers` invocation is
-currently blocked. This requires an authorized organization-policy administrator
-to allow public IAM members or set an exception. The service is deployed and
-ready, but anonymous endpoint verification cannot pass until that policy is
-changed.
+Public invocation is enabled with Cloud Run's `--no-invoker-iam-check` setting.
+The private GCS bucket remains unchanged and is accessible only to the dedicated
+runtime service account. All `/health`, `/model-info`, `/predict`, and
+`/predict-batch` checks pass without an Authorization header.
 
 To clean up only RideCast resources, inspect first with `gcloud run services
 list`, `gcloud artifacts docker images list`, and `gcloud storage ls`; do not
