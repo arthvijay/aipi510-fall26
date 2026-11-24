@@ -18,6 +18,7 @@ The tested Docker image is
 `us-central1-docker.pkg.dev/ridecast-515702/ridecast/ridecast-api:ed32c203-gcs`.
 
 Cloud Run service: `https://ridecast-api-oidv2f4u5a-uc.a.run.app`.
+Streamlit app: `https://aipi510-fall26-nybzcnzfqfjaiqeaikzedm.streamlit.app/`.
 The deployed revision is gen1, 0.5 vCPU, 512 MiB, concurrency 1, minimum 0,
 maximum 1, and uses the dedicated `ridecast-runtime` service account with
 `roles/storage.objectViewer` on the private bucket.
