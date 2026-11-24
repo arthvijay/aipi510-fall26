@@ -1,0 +1,4 @@
+chromadb==0.6.1
+sentence-transformers==6.3.0
+gradio==6.32.0
+numpy==2.2.6
