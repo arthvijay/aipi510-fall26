@@ -20,6 +20,7 @@ FROM python:3.11-slim AS project
 WORKDIR /app
 COPY requirements.txt .
 COPY pyproject.toml .
+COPY src src
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 RUN useradd --create-home appuser && mkdir -p workdir && chown -R appuser:appuser /app
